@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#9f1239">
+<title>MPI V2 — Makna Sila Pancasila | SD Negeri 5 Wawo</title>
+<style>
+:root{--red:#9f1239;--red2:#e11d48;--gold:#f59e0b;--cream:#fffaf2;--ink:#1f2937;--muted:#64748b;--green:#15803d;--blue:#2563eb;--purple:#7c3aed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at top left,#fff7ed 0,#fff 38%,#ffe4e6 100%);min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;border:0}.top{position:sticky;top:0;z-index:30;background:#ffffffeb;backdrop-filter:blur(14px);border-bottom:1px solid #fecdd3}.nav{max-width:1160px;margin:auto;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brandmark{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#fbbf24,#f97316);display:grid;place-items:center;color:#fff;font-size:24px;box-shadow:0 7px 15px #9a341233}.navtools{display:flex;gap:7px}.navbtn{background:#fff1f2;color:var(--red);padding:9px 12px;border-radius:12px;font-weight:800}.navbtn:hover{background:#ffe4e6}
+main{max-width:1160px;margin:auto;padding:25px 16px 55px}.screen{display:none}.screen.active{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{min-height:76vh;display:grid;place-items:center;text-align:center}.heroCard{max-width:900px;padding:48px 28px;border:1px solid #fff;background:#ffffffdc;border-radius:34px;box-shadow:0 24px 70px #88133718}.heroLogo{font-size:72px;display:inline-grid;place-items:center;width:120px;height:120px;border-radius:35px;background:linear-gradient(145deg,#fef3c7,#fee2e2);border:3px solid #fff;box-shadow:0 12px 28px #9f123722}.eyebrow{display:inline-block;margin-top:18px;padding:7px 11px;border-radius:99px;background:#fef3c7;color:#92400e;font-size:.78rem;font-weight:900}.hero h1{font-size:clamp(2.2rem,6vw,4.3rem);line-height:1.05;color:var(--red);margin:13px 0}.hero p{max-width:700px;margin:0 auto 25px;color:var(--muted);font-size:1.1rem}.primary{background:linear-gradient(135deg,var(--red),#4c0519);color:#fff;padding:13px 20px;border-radius:14px;font-weight:900;box-shadow:0 9px 20px #9f123933}.secondary{background:#fff;border:2px solid #fecdd3;color:var(--red);padding:11px 17px;border-radius:14px;font-weight:850}.primary:hover,.secondary:hover,.navbtn:hover{transform:translateY(-1px)}
+.title{font-size:clamp(1.7rem,4vw,2.3rem);margin:4px 0}.subtitle{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.card{background:#fff;border:1px solid #f1f5f9;border-radius:22px;padding:20px;box-shadow:0 9px 28px #0000000c}.menuCard{min-height:175px;text-align:left;transition:.2s}.menuCard:hover{transform:translateY(-5px);box-shadow:0 18px 35px #00000012}.menuIcon{font-size:42px}.menuCard h3{margin:9px 0 5px}.tag{display:inline-block;padding:6px 10px;border-radius:99px;background:#fff1f2;color:var(--red);font-size:.78rem;font-weight:900}
+.sila{display:grid;grid-template-columns:92px 1fr;gap:16px;align-items:start}.symbol{width:88px;height:88px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#fff7ed,#fff1f2);border:2px solid #fed7aa;box-shadow:inset 0 0 0 5px #fff;font-weight:950;font-size:42px}.sila h3{margin:0;color:var(--red)}.meaning{color:#475569}.example{background:#f8fafc;border-radius:12px;padding:10px 12px;font-size:.93rem}.symbolLabel{font-size:.72rem;color:var(--muted);font-weight:800;margin-top:4px;text-align:center}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.score{display:inline-block;padding:9px 13px;background:#fff;border-radius:12px;font-weight:850;margin:0 6px 7px 0;box-shadow:0 4px 12px #0000000a}.progress{height:9px;background:#e2e8f0;border-radius:99px;overflow:hidden;margin:13px 0}.progress>div{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));transition:.35s}.scenario{padding:18px;background:#fff7ed;border-left:5px solid var(--gold);border-radius:12px;line-height:1.6;font-size:1.07rem}.choices{display:grid;gap:10px;margin-top:14px}.choice{background:#fff;padding:14px;border:2px solid #e2e8f0;border-radius:14px;text-align:left;font-weight:750;transition:.15s}.choice:hover{border-color:#fda4af;background:#fff8f9}.correct{border-color:#22c55e!important;background:#f0fdf4!important}.wrong{border-color:#ef4444!important;background:#fef2f2!important}.feedback{display:none;margin-top:14px;padding:13px;border-radius:13px;font-weight:800}.feedback.show{display:block}.good{background:#dcfce7;color:#166534}.bad{background:#fee2e2;color:#991b1b}
+.dropzone{min-height:92px;border:3px dashed #cbd5e1;border-radius:18px;padding:13px;display:grid;place-items:center;text-align:center;background:#f8fafc;color:#64748b;font-weight:800}.dropzone.over{border-color:var(--red);background:#fff1f2}.dragpool{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:15px 0}.dragItem{background:#fff;border:2px solid #e2e8f0;padding:11px 8px;border-radius:13px;text-align:center;font-weight:900;cursor:grab}.dragItem:active{cursor:grabbing}.matchGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.matchCol{background:#fff;border-radius:18px;padding:12px;border:1px solid #e2e8f0}.matchCol h4{text-align:center;margin:4px}.dropzone small{font-weight:700}
+.reflect textarea{width:100%;min-height:110px;border:2px solid #e2e8f0;border-radius:14px;padding:12px;resize:vertical}.reflect textarea:focus{outline:none;border-color:#fb7185}
+.resultBig{font-size:3.5rem;color:var(--red);font-weight:950}.certificate{border:8px double #b45309;border-radius:10px;background:#fffdf5;padding:32px;text-align:center}.certificate h2{font-family:Georgia,serif;color:#92400e;font-size:2rem}.certName{font-size:1.8rem;font-weight:900;border-bottom:2px solid #92400e;display:inline-block;padding:5px 18px}.nameInput{padding:12px 14px;border:2px solid #e2e8f0;border-radius:12px;width:min(420px,100%)}.small{font-size:.88rem;color:var(--muted)}.center{text-align:center}.footer{text-align:center;color:var(--muted);margin-top:35px;font-size:.88rem}
+@media(max-width:760px){.sila{grid-template-columns:1fr}.symbol{margin:auto}.dragpool,.matchGrid{grid-template-columns:1fr 1fr}.label{display:none}.heroCard{padding:34px 18px}}
+@media(max-width:430px){.dragpool,.matchGrid{grid-template-columns:1fr}.nav{padding:9px}.brand{font-size:.88rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+<div class="brand"><div class="brandmark">🦅</div><div>MPI Pancasila<br><span class="small">Kelas VI • SD Negeri 5 Wawo</span></div></div>
+<div class="navtools"><button class="navbtn" onclick="go('menu')">⌂ <span class="label">Beranda</span></button><button class="navbtn" onclick="toggleAudio()">🔊 <span class="label" id="audioLabel">Audio</span></button></div>
+</div></header>
+<main>
+<section id="splash" class="screen active hero"><div class="heroCard">
+<div class="heroLogo">🇮🇩</div><div class="eyebrow">MULTIMEDIA PEMBELAJARAN INTERAKTIF • FASE C</div>
+<h1>Makna Sila Pancasila</h1><p>Belajar melalui materi, simulasi mencocokkan nilai, tantangan berpikir kritis, kuis, refleksi, dan sertifikat.</p>
+<button class="primary" onclick="go('menu');say('Selamat datang. Mari belajar makna sila Pancasila.')">🚀 Mulai Belajar</button>
+</div></section>
+
+<section id="menu" class="screen"><h1 class="title">Menu Utama</h1><p class="subtitle">Pilih aktivitas sesuai urutan belajar atau langsung ke bagian yang kamu inginkan.</p>
+<div class="grid">
+<button class="card menuCard" onclick="go('materi')"><div class="menuIcon">📚</div><span class="tag">1 • Kenali</span><h3>Materi Interaktif</h3><p>Lima sila, lambang, makna, dan contoh penerapan.</p></button>
+<button class="card menuCard" onclick="startMatch()"><div class="menuIcon">🧩</div><span class="tag">2 • Cocokkan</span><h3>Simulasi Drag & Drop</h3><p>Seret perilaku ke sila Pancasila yang tepat.</p></button>
+<button class="card menuCard" onclick="go('kritis')"><div class="menuIcon">💡</div><span class="tag">3 • Analisis</span><h3>Tantangan Kritis</h3><p>Ambil keputusan pada situasi kehidupan sehari-hari.</p></button>
+<button class="card menuCard" onclick="startQuiz()"><div class="menuIcon">🧠</div><span class="tag">4 • Uji</span><h3>Kuis</h3><p>Uji pemahaman dan dapatkan skor otomatis.</p></button>
+<button class="card menuCard" onclick="go('refleksi')"><div class="menuIcon">📝</div><span class="tag">5 • Refleksi</span><h3>Refleksi Belajar</h3><p>Tuliskan tindakan yang akan kamu praktikkan.</p></button>
+<button class="card menuCard" onclick="go('profil')"><div class="menuIcon">🏫</div><span class="tag">Info</span><h3>Profil MPI</h3><p>Identitas media pembelajaran dan satuan pendidikan.</p></button>
+</div>
+<div class="card" style="margin-top:18px"><b>Alur:</b> Kenali → Pahami → Cocokkan → Analisis → Uji → Refleksi → Sertifikat</div>
+</section>
+
+<section id="materi" class="screen"><h1 class="title">📚 Materi Lima Sila</h1><p class="subtitle">Amati simbol dan hubungkan dengan perilaku nyata.</p><div class="grid">
+<article class="card sila"><div><div class="symbol">★</div><div class="symbolLabel">BINTANG</div></div><div><h3>Sila 1</h3><b>Ketuhanan Yang Maha Esa</b><p class="meaning">Menghormati keyakinan dan ibadah setiap orang.</p><div class="example">💬 Contoh: memberi kesempatan teman beribadah dengan tenang.</div></div></article>
+<article class="card sila"><div><div class="symbol">⛓</div><div class="symbolLabel">RANTAI</div></div><div><h3>Sila 2</h3><b>Kemanusiaan yang Adil dan Beradab</b><p class="meaning">Menghargai martabat manusia, bersikap adil, peduli, dan menolong.</p><div class="example">💬 Contoh: membantu teman yang mengalami kesulitan.</div></div></article>
+<article class="card sila"><div><div class="symbol">♣</div><div class="symbolLabel">POHON BERINGIN</div></div><div><h3>Sila 3</h3><b>Persatuan Indonesia</b><p class="meaning">Menjaga persatuan, menghargai keberagaman, dan mengutamakan kepentingan bersama.</p><div class="example">💬 Contoh: bekerja sama membersihkan lingkungan sekolah.</div></div></article>
+<article class="card sila"><div><div class="symbol">🐂</div><div class="symbolLabel">KEPALA BANTENG</div></div><div><h3>Sila 4</h3><b>Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan</b><p class="meaning">Mengutamakan musyawarah dan menghargai pendapat.</p><div class="example">💬 Contoh: berdiskusi sebelum memilih ketua kelompok.</div></div></article>
+<article class="card sila"><div><div class="symbol">🌾</div><div class="symbolLabel">PADI & KAPAS</div></div><div><h3>Sila 5</h3><b>Keadilan Sosial bagi Seluruh Rakyat Indonesia</b><p class="meaning">Bersikap adil serta melaksanakan hak dan kewajiban.</p><div class="example">💬 Contoh: membagi tugas kelompok secara adil.</div></div></article>
+</div><div class="toolbar"><button class="secondary" onclick="go('menu')">← Menu</button><button class="primary" onclick="startMatch()">Lanjut ke Simulasi →</button></div></section>
+
+<section id="simulasi" class="screen"><h1 class="title">🧩 Simulasi Drag & Drop</h1><p class="subtitle">Seret kartu perilaku ke kolom sila yang paling sesuai. Pada HP, kartu juga dapat diketuk lalu dipilih.</p>
+<div class="card"><b>Kartu perilaku:</b><div id="pool" class="dragpool"></div>
+<div id="matchGrid" class="matchGrid"></div>
+<div id="matchFeedback" class="feedback"></div><div class="toolbar"><button class="primary" onclick="finishMatch()">Selesai & Lihat Hasil</button><button class="secondary" onclick="go('menu')">Menu</button></div></div></section>
+
+<section id="kritis" class="screen"><h1 class="title">💡 Tantangan Berpikir Kritis</h1><div class="card">
+<div class="scenario">Temanmu sedang melaksanakan ibadah. Beberapa teman ingin bermain dan berbicara keras di dekatnya. Apa tindakan yang paling tepat?</div>
+<div class="choices"><button class="choice" onclick="critical(this,false)">Tetap bermain keras karena semua orang boleh bermain.</button><button class="choice" onclick="critical(this,true)">Mengecilkan suara dan memberi kesempatan teman beribadah dengan tenang.</button><button class="choice" onclick="critical(this,false)">Menyuruh teman menghentikan ibadahnya agar permainan dimulai.</button></div>
+<div id="criticalFeedback" class="feedback"></div><div class="toolbar"><button class="primary" onclick="go('refleksi')">Lanjut Refleksi →</button><button class="secondary" onclick="go('menu')">Menu</button></div></div></section>
+
+<section id="kuis" class="screen"><h1 class="title">🧠 Kuis Interaktif</h1><span class="score">Soal <b id="qNo">1</b>/3</span><span class="score">Skor <b id="qScore">0</b></span><div class="progress"><div id="qProgress" style="width:33%"></div></div><div class="card">
+<div id="question" style="font-size:1.16rem;font-weight:900"></div><div class="choices" id="qChoices"></div><div id="qFeedback" class="feedback"></div>
+<div class="toolbar"><button class="primary" id="qNext" style="display:none" onclick="nextQuiz()">Soal Berikutnya →</button><button class="secondary" onclick="go('menu')">Menu</button></div></div></section>
+
+<section id="refleksi" class="screen"><h1 class="title">📝 Refleksi Belajar</h1><div class="card reflect"><p><b>Setelah belajar Pancasila, tindakan baik apa yang akan kamu praktikkan di sekolah atau di rumah?</b></p><textarea id="reflection" placeholder="Tuliskan jawabanmu di sini..."></textarea><div class="toolbar"><button class="primary" onclick="saveReflection()">Simpan Refleksi</button><button class="secondary" onclick="go('hasil')">Lihat Hasil →</button></div><div id="reflectionFeedback" class="feedback"></div></div></section>
+
+<section id="hasil" class="screen"><div class="card center"><div class="menuIcon">🏆</div><h1 class="title">Hasil Belajar</h1><p>Masukkan nama untuk membuat sertifikat belajar.</p>
+<div class="grid"><div class="card"><div class="small">Simulasi</div><div class="resultBig" id="resultMatch">0</div></div><div class="card"><div class="small">Kuis</div><div class="resultBig" id="resultQuiz">0</div></div><div class="card"><div class="small">Rata-rata</div><div class="resultBig" id="resultAverage">0</div></div></div>
+<p id="resultMessage"></p><input class="nameInput" id="studentName" placeholder="Nama peserta didik"><div class="toolbar" style="justify-content:center"><button class="primary" onclick="makeCertificate()">🎓 Buat Sertifikat</button><button class="secondary" onclick="go('menu')">Menu</button></div></div></section>
+
+<section id="sertifikat" class="screen"><div class="certificate"><div class="small">SD NEGERI 5 WAWO</div><div style="font-size:45px">🇮🇩</div><h2>SERTIFIKAT APRESIASI</h2><p>Diberikan kepada</p><div class="certName" id="certName">Peserta Didik</div><p>atas keberhasilan menyelesaikan Multimedia Pembelajaran Interaktif</p><h3>“Makna Sila Pancasila”</h3><p id="certScore"></p><p class="small">Kurikulum Merdeka • Fase C</p></div><div class="toolbar" style="justify-content:center"><button class="primary" onclick="window.print()">🖨️ Cetak / Simpan PDF</button><button class="secondary" onclick="go('menu')">Selesai</button></div></section>
+
+<section id="profil" class="screen"><h1 class="title">🏫 Profil MPI</h1><div class="card"><h2>Multimedia Pembelajaran Interaktif</h2><p><b>Mata Pelajaran:</b> Pendidikan Pancasila</p><p><b>Kelas/Fase:</b> VI / Fase C — Kurikulum Merdeka</p><p><b>Materi:</b> Makna Sila Pancasila</p><p><b>Satuan Pendidikan:</b> SD Negeri 5 Wawo</p><p>Media dirancang untuk mengenali lambang Pancasila, memahami makna sila, menerapkan nilai dalam kehidupan sehari-hari, berpikir kritis, dan merefleksikan pembelajaran.</p><div class="card" style="background:#fff7ed"><b>Catatan:</b> Aplikasi ini bersifat static web dan dapat dijalankan tanpa database.</div></div><div class="toolbar"><button class="secondary" onclick="go('menu')">← Menu</button></div></section>
+<div class="footer">MPI Online V2 • Makna Sila Pancasila • SD Negeri 5 Wawo</div>
+</main>
+<script>
+const screens=['splash','menu','materi','simulasi','kritis','kuis','refleksi','hasil','sertifikat','profil'];
+let matchScore=0,quizScore=0,audioOn=false,dragData=null;
+const behaviors=[
+{id:'b1',text:'Memberi kesempatan teman beribadah.',sila:1},
+{id:'b2',text:'Menolong teman yang mengalami kesulitan.',sila:2},
+{id:'b3',text:'Bekerja sama tanpa membeda-bedakan.',sila:3},
+{id:'b4',text:'Bermusyawarah sebelum mengambil keputusan.',sila:4},
+{id:'b5',text:'Membagi tugas secara adil.',sila:5}];
+const silaNames=['','Sila 1 — Ketuhanan Yang Maha Esa','Sila 2 — Kemanusiaan yang Adil dan Beradab','Sila 3 — Persatuan Indonesia','Sila 4 — Kerakyatan dalam Permusyawaratan/Perwakilan','Sila 5 — Keadilan Sosial bagi Seluruh Rakyat Indonesia'];
+const questions=[
+['Lambang sila pertama Pancasila adalah...',['Bintang','Rantai','Pohon beringin','Kepala banteng'],0,30],
+['Pasangan lambang dan sila yang tepat adalah...',['Rantai — Sila 3','Padi dan kapas — Sila 5','Bintang — Sila 4','Kepala banteng — Sila 2'],1,40],
+['Membagi tugas kelompok secara adil mencerminkan nilai...',['Persatuan Indonesia','Kemanusiaan','Keadilan Sosial','Kerakyatan'],2,30]];
+let qi=0,quizAnswered=false;
+function go(id){screens.forEach(x=>document.getElementById(x).classList.remove('active'));document.getElementById(id).classList.add('active');scrollTo(0,0)}
+function say(t){if(audioOn&&window.speechSynthesis){speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance(t))}}
+function toggleAudio(){audioOn=!audioOn;document.getElementById('audioLabel').textContent=audioOn?'Aktif':'Audio';if(audioOn)say('Audio narasi aktif.')}
+function startMatch(){matchScore=0;buildMatch();go('simulasi')}
+function buildMatch(){
+ const pool=document.getElementById('pool');pool.innerHTML='';
+ behaviors.forEach(b=>{let x=document.createElement('div');x.className='dragItem';x.textContent=b.text;x.draggable=true;x.dataset.id=b.id;x.ondragstart=()=>dragData=b.id;x.onclick=()=>{dragData=b.id;document.querySelectorAll('.dropzone').forEach(z=>z.classList.add('over'));setTimeout(()=>document.querySelectorAll('.dropzone').forEach(z=>z.classList.remove('over')),900)};pool.appendChild(x)});
+ const grid=document.getElementById('matchGrid');grid.innerHTML='';
+ for(let i=1;i<=5;i++){let c=document.createElement('div');c.className='matchCol';c.innerHTML='<h4>'+silaNames[i]+'</h4>';let d=document.createElement('div');d.className='dropzone';d.dataset.sila=i;d.textContent='Taruh kartu di sini';d.ondragover=e=>{e.preventDefault();d.classList.add('over')};d.ondragleave=()=>d.classList.remove('over');d.ondrop=e=>{e.preventDefault();d.classList.remove('over');dropCard(d)};d.onclick=()=>{if(dragData)dropCard(d)};c.appendChild(d);grid.appendChild(c)}
+ document.getElementById('matchFeedback').className='feedback';
+}
+function dropCard(zone){
+ if(!dragData)return;let b=behaviors.find(x=>x.id===dragData);if(!b)return;
+ if(Number(zone.dataset.sila)===b.sila){zone.innerHTML='✅ '+b.text;zone.style.borderColor='#22c55e';zone.style.background='#f0fdf4';matchScore+=20;document.querySelectorAll('.dragItem').forEach(x=>{if(x.dataset.id===b.id)x.remove()});document.getElementById('matchFeedback').className='feedback show good';document.getElementById('matchFeedback').textContent='Benar! '+b.text+' sesuai dengan '+silaNames[b.sila]+'.';say('Benar. '+b.text)}else{document.getElementById('matchFeedback').className='feedback show bad';document.getElementById('matchFeedback').textContent='Belum tepat. Coba perhatikan kembali makna setiap sila.'}dragData=null}
+function finishMatch(){document.getElementById('resultMatch').textContent=matchScore;updateResult();go('hasil')}
+function critical(btn,ok){document.querySelectorAll('#kritis .choice').forEach(x=>x.disabled=true);let f=document.getElementById('criticalFeedback');f.className='feedback show '+(ok?'good':'bad');f.textContent=ok?'Tepat! Menghormati teman yang sedang beribadah merupakan penerapan Sila 1.':'Belum tepat. Kita perlu menghormati teman yang sedang menjalankan ibadah.';say(f.textContent)}
+function startQuiz(){qi=0;quizScore=0;renderQuiz();go('kuis')}
+function renderQuiz(){let q=questions[qi];document.getElementById('qNo').textContent=qi+1;document.getElementById('qScore').textContent=quizScore;document.getElementById('qProgress').style.width=((qi+1)/3*100)+'%';document.getElementById('question').textContent=q[0];let box=document.getElementById('qChoices');box.innerHTML='';q[1].forEach((t,i)=>{let b=document.createElement('button');b.className='choice';b.textContent=t;b.onclick=()=>answerQuiz(b,i);box.appendChild(b)});document.getElementById('qFeedback').className='feedback';document.getElementById('qNext').style.display='none';quizAnswered=false}
+function answerQuiz(btn,i){if(quizAnswered)return;quizAnswered=true;let q=questions[qi];document.querySelectorAll('#qChoices .choice').forEach((x,n)=>{if(n===q[2])x.classList.add('correct')});let f=document.getElementById('qFeedback');if(i===q[2]){quizScore+=q[3];btn.classList.add('correct');f.className='feedback show good';f.textContent='Benar! +'+q[3]+' poin.'}else{btn.classList.add('wrong');f.className='feedback show bad';f.textContent='Belum tepat. Jawaban yang benar: '+q[1][q[2]]+'.'}document.getElementById('qScore').textContent=quizScore;document.getElementById('qNext').style.display='inline-block'}
+function nextQuiz(){if(qi<2){qi++;renderQuiz()}else{document.getElementById('resultQuiz').textContent=quizScore;updateResult();go('hasil')}}
+function updateResult(){let avg=Math.round((matchScore+quizScore)/2);document.getElementById('resultAverage').textContent=avg;document.getElementById('resultMessage').textContent=avg>=80?'🌟 Sangat baik! Terus praktikkan nilai Pancasila.':avg>=60?'👍 Bagus! Pelajari kembali bagian yang masih kurang.':'💪 Tetap semangat! Pelajari materi dan coba lagi.'}
+function saveReflection(){let v=document.getElementById('reflection').value.trim(),f=document.getElementById('reflectionFeedback');f.className='feedback show '+(v?'good':'bad');f.textContent=v?'Refleksi tersimpan di perangkat ini.':'Tuliskan refleksimu terlebih dahulu.';if(v)localStorage.setItem('mpiReflection',v)}
+function makeCertificate(){let name=document.getElementById('studentName').value.trim()||'Peserta Didik';let avg=Math.round((matchScore+quizScore)/2);document.getElementById('certName').textContent=name;document.getElementById('certScore').textContent='Skor akhir: '+avg+' / 100';go('sertifikat')}
+(function(){let r=localStorage.getItem('mpiReflection');if(r)document.getElementById('reflection').value=r})()
+</script>
+</body>
+</html>
